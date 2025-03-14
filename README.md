@@ -1,25 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# MODELS
+Author
+  - id (auto incremeting PK)
+  - name:string
+  - rating:string
 
-Things you may want to cover:
+Publisher
+  - id (auto incremeting PK)
+  - name:string
+  - revenue:string
 
-* Ruby version
+Book
 
-* System dependencies
+  - id (auto incremeting PK)
+  - name:string
+  - publishing_year:integer
+  - language_code:string
+  - average_rating:decimal (required)
+  - ratings_count:integer (required)
+  - genre:string (required)
+  - gross_sales:string (required)
+  - sale_price:string (required)
+  - sale_rank:integer (required)
+  - units_sold:integer (required)
+  - publisher_id:integer (foreign key; required)
 
-* Configuration
+# Many to Many Relationship
+A Book can be written by one or many authors and one or many authors can write one or many books
+A join table will be used called book_author
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Intro-to-Rails
+Book_Author
+  - book_id:integer (FK)
+  - author_id:integer (FK)
