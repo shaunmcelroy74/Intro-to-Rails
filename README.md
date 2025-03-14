@@ -17,14 +17,14 @@ Book
   - name:string
   - publishing_year:integer
   - language_code:string
-  - average_rating:decimal (required)
-  - ratings_count:integer (required)
-  - genre:string (required)
-  - gross_sales:string (required)
-  - sale_price:string (required)
-  - sale_rank:integer (required)
-  - units_sold:integer (required)
-  - publisher_id:integer (foreign key; required)
+  - average_rating:decimal
+  - ratings_count:integer
+  - genre:string
+  - gross_sales:string
+  - sale_price:string
+  - sale_rank:integer
+  - units_sold:integer
+  - publisher_id:integer
 
 # Many to Many Relationship
 A Book can be written by one or many authors and one or many authors can write one or many books
