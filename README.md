@@ -4,7 +4,7 @@
 Author
   - id (auto incremeting PK)
   - author_name:string
-  - rating:string
+  - author_rating:string
 
 Publisher
   - id (auto incremeting PK)
