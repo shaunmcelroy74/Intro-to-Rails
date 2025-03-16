@@ -1,9 +1,9 @@
 class PublishersController < ApplicationController
   def index
-    @publishers = Publisher.all
+    @publishers = Publisher.includes(:books).all
   end
 
   def show
-    @publishers = Publisher.find(params[:id])
+    @publisher = Publisher.find(params[:id])
   end
 end
