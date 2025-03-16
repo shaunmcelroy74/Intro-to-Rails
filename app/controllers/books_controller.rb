@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.order("Publishing_Year DESC")
+    @books = Book.includes(:publisher).order("Publishing_Year DESC")
   end
 
   def show
