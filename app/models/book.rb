@@ -5,5 +5,5 @@ class Book < ApplicationRecord
   :genre, :gross_sales, :sale_price, :sale_rank, :units_sold, presence: true
   validates :book_name, uniqueness: true
   validates :publishing_year, :book_ratings_count, :sale_rank, :units_sold, numericality: { only_integer: true }
-  validates :book_average_rating, numbericality: true
+  validates :book_average_rating, numericality: true
 end
