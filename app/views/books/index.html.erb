@@ -1,6 +1,6 @@
-<h1>List of Books</h1>
+<h1 class="title is-2">List of Books</h1>
 
-<ol>
+<ol class="ml-5">
 <% @books.each do |book|%>
   <li>
     <%= link_to book.book_name, book %> published by: <%= link_to book.publisher.publisher_name, book.publisher %>
