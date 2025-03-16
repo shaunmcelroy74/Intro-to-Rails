@@ -1,2 +1,4 @@
-<h1>Publishers#show</h1>
-<p>Find me in app/views/publishers/show.html.erb</p>
+<h1 class="title is-2"><%= @publishers.publisher_name %></h1>
+<p><em>
+Printed <%= @publishers.books.count %> books on the list
+</em></p>
