@@ -5,7 +5,7 @@
 <div class="columns">
   <div class="column">
     <h3 class="title is-2">Top 10 Grossing Books</h3>
-    <ul>
+    <ol class= "ml-5">
       <% sorted_books.each do |book| %>
         <li>
           <%= link_to book.book_name, book %>
@@ -14,13 +14,13 @@
           </em>
         </li>
       <% end %>
-    </ul>
-    <p class= "mt-5"><%= link_to "💲💲💲See the entire list here 💸💸💸", books_path %></p>
-  </div>
+    </ol>
+  <p class= "mt-5 ml-5"><%= link_to "💲💲💲See the entire list here 💸💸💸", books_path %></p>
+</div>
 
-  <div class="column">
+<div class="column">
   <h3 class="title is-2">Top Grossing Publishers</h3>
-<ul>
+<ul class= "ml-5">
   <% sorted_publishers = @publishers.sort_by do |publisher|
      publisher.books.sum { |book| book.gross_sales.to_f }
    end.reverse %>
@@ -33,4 +33,5 @@
     </li>
   <% end %>
 </ul>
+  <p class= "mt-5 ml-5"><%= link_to "💲💲💲Go to the publishers list 💸💸💸", publishers_path %></p>
 </div>
