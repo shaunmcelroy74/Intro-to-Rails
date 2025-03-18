@@ -3,7 +3,7 @@
 <ol class="ml-5">
 <% @publishers.each do |publisher| %>
 <li>
-<%= link_to publisher.publisher_name, publisher %> printed <%= publisher.books.count %> books in the list
+<%= link_to publisher.publisher_name, publisher %> printed <%= publisher.books_count %> books in the list
 </li>
 <% end %>
 </ol>
