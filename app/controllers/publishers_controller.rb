@@ -1,6 +1,6 @@
 class PublishersController < ApplicationController
   def index
-    @publishers = Publisher.includes(:books).all
+    @publishers = Publisher.order_by_book_count
   end
 
   def show
