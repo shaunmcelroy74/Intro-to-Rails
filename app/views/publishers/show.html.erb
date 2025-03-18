@@ -1,14 +1,17 @@
-<% content_for(:title) {@publisher.publisher_name} %>
+<% content_for(:title) { @publisher.publisher_name } %>
 
 <h1 class="title is-2"><%= @publisher.publisher_name %></h1>
-<p class="mb-5"><em>
-Printed <%= @publisher.books.count %> books on the list
-</em></p>
+<p class="mb-5">
+  <em>
+    Printed <%= @publisher.books.count %> books on the list
+  </em>
+</p>
 
 <div class="content">
-<ul>
-  <% @publisher.books.each do |books| %>
-    <li><%= link_to books.book_name, books %></li>
-  <% end %>
-</ul>
+  <% sorted_books = @publisher.books.sort_by { |book| book.gross_sales.to_f }.reverse %>
+  <ol>
+    <% sorted_books.each do |book| %>
+      <li><%= link_to book.book_name, book %> (<%= number_to_currency(book.gross_sales) %>)</li>
+    <% end %>
+  </ol>
 </div>

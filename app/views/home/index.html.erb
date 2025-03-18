@@ -18,7 +18,7 @@
 
 <div class="column">
   <h3 class="title is-2">Top Grossing Publishers</h3>
-<ul class= "ml-5">
+<ol class= "ml-5">
   <% sorted_publishers = @publishers.sort_by do |publisher|
      publisher.books.sum { |book| book.gross_sales.to_f }
    end.reverse %>
@@ -30,6 +30,6 @@
       </em>
     </li>
   <% end %>
-</ul>
+</ol>
   <p class= "mt-5 ml-5"><%= link_to "💲💲💲Go to the publishers list 💸💸💸", publishers_path %></p>
 </div>
