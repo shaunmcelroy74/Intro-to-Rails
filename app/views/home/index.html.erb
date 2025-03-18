@@ -1,2 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% sorted_books = @books.sort_by { |book| book.gross_sales.to_f }.reverse %>
+
+<h1 class="title is-2">Top Grossing Books</h1>
+
+<div class="columns">
+  <div class="column">
+    <h3 class="title is-2">Top 10 Grossing Books</h3>
+    <ul>
+      <% sorted_books.each do |book| %>
+        <li>
+          <%= link_to book.book_name, book %>
+          <em>
+            Gross Sales: <%= number_to_currency(book.gross_sales) %>
+          </em>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="column">
+    <h3 class="title is-2">Top Grossing Publishers</h3>
+    <!-- Additional code for publishers list can go here -->
+  </div>
+</div>
