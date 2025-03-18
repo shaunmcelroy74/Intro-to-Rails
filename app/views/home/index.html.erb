@@ -17,7 +17,18 @@
     </ul>
   </div>
   <div class="column">
-    <h3 class="title is-2">Top Grossing Publishers</h3>
-    <!-- Additional code for publishers list can go here -->
-  </div>
+  <h3 class="title is-2">Top Grossing Publishers</h3>
+<ul>
+  <% sorted_publishers = @publishers.sort_by do |publisher|
+     publisher.books.sum { |book| book.gross_sales.to_f }
+   end.reverse %>
+  <% sorted_publishers.each do |publisher| %>
+    <li>
+      <%= link_to publisher.publisher_name, publisher %>
+      <em>
+        Gross Revenue: <%= number_to_currency(publisher.books.sum { |book| book.gross_sales.to_f }) %>
+      </em>
+    </li>
+  <% end %>
+</ul>
 </div>
