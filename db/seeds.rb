@@ -44,8 +44,8 @@ books[0..9].each do |row|
         puts author_name
         # Optionally: Create Author and BookAuthor records if you need to
         # For example:
-        author = Author.find_or_create_by(author_name: author_name)
-        BookAuthor.create(book: new_book, author: author)
+        # author = Author.find_or_create_by(name: author_name)
+        # BookAuthor.create(book: new_book, author: author)
       end
     end
 
@@ -60,4 +60,3 @@ end
 
 puts "Created #{Publisher.count} Publishers"
 puts "Created #{Book.count} Books"
-puts "Created #{Author.count} Authors"
